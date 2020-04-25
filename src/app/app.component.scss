@@ -1,0 +1,214 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown-container {
+  display: flex;
+  width: 335px;
+
+  .multi-select {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .selected-items {
+      border-radius: 7px;
+      margin: 5px 0px;
+      padding: 9px 13px;
+      background-color: #faf8ff;
+      border: 2px solid #c1c5d4;
+
+      .selected-items-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 30px;
+
+        .close {
+          cursor: pointer;
+        }
+
+        .chip-container {
+          display: flex;
+          .chip {
+            font-family: Roboto;
+            background: #5ed2f5;
+            border-radius: 4px;
+            color: #fff;
+            cursor: initial;
+            display: flex;
+            align-items: baseline;
+            margin: 0 5px;
+            padding: 5px 7px;
+            font-size: 12px;
+            white-space: pre;
+
+            i {
+              margin-left: 3px;
+            }
+          }
+
+          .dots {
+            display: flex;
+            align-self: flex-end;
+            margin-right: 5px;
+          }
+        }
+
+        .chip-container:first-child {
+          .chip {
+            margin-left: 0px;
+          }
+        }
+
+
+        .select-placeholder {
+          font-family: Roboto;
+          font-weight: normal;
+          font-size: 13px;
+          color: #c1c5d4;
+          cursor: pointer;
+        }
+      }
+
+
+      legend {
+        font-family: Roboto;
+        font-weight: normal;
+        font-size: 11px;
+        color: #c1c5d4;
+        margin-bottom: -5px;
+      }
+
+
+    }
+
+    .multi-select-options {
+      display: flex;
+      flex-direction: column;
+      border-radius: 7px;
+      margin: 5px 0px;
+      //padding: 13px;
+      background-color: #faf8ff;
+      border: 2px solid #c1c5d4;
+      position: relative;
+
+      .search-container {
+        display: flex;
+        justify-content: space-between;
+        border-radius: 4px;
+        background-color: #FFFFFF;
+        padding: 10px;
+        margin: 10px;
+        margin-bottom: 0px;
+
+        .fa-search:before {
+          color: #c1c5d4;
+        }
+
+
+
+        .autocomplete {
+          border: 0px;
+          outline: none;
+        }
+
+        ::placeholder {
+          font-family: Roboto;
+          font-size: 14px;
+          color: #c1c5d4;
+        }
+      }
+
+
+      .option {
+        display: flex;
+        padding: 9px 20px;
+        margin: 2px 0;
+        cursor: pointer;
+
+        .container {
+          display: block;
+          position: relative;
+          padding-left: 35px;
+          cursor: pointer;
+          font-size: 14px;
+          line-height: 23px;
+          font-family: Roboto;
+          color: #b4b2c1;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
+        .container input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+        }
+
+        .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 20px;
+          width: 20px;
+          border-radius: 6px;
+          border: 1px solid #d4d4d4;
+        }
+
+        .container:hover input ~ .checkmark {
+          background-color: #ccc;
+          border-radius: 6px;
+        }
+
+        .container input:checked ~ .checkmark {
+          background-color: #5ed2f5;
+          border-radius: 6px;
+          border: 1px solid #5ed2f5;
+        }
+
+        .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+
+        .container input:checked ~ .checkmark:after {
+          display: block;
+        }
+
+        .container .checkmark:after {
+          left: 7px;
+          top: 4px;
+          width: 5px;
+          height: 8px;
+          border: 1px solid white;
+          border-width: 0 2px 2px 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+
+        &.checked {
+          background-color: #f2effb;
+        }
+      }
+
+      .option:hover,{
+        background-color: #f2effb;
+      }
+
+      .checkbox-container {
+        margin: 10px 0px
+      }
+
+    }
+
+  }
+}
+
+
